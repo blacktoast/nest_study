@@ -7,7 +7,6 @@ const LoginKey =
 export class UsersService {
   async createUser(name: string, password: string) {
     await this.checkUserExists(name);
-
     await this.saveUser(name, password);
   }
 
@@ -20,14 +19,15 @@ export class UsersService {
   }
 
   l;
-  async login(name, password): Promise<string> {
+  async login(name, password) {
     // name  password가진 유저가 있는지 db에서 확인
     // jwt 발급
-
-    throw new Error('not implement method');
+    console.log(name, password);
+    return;
   }
 
-  async userInfo(userId: string) {
-    throw new Error('Method not implemented.');
+  async getUserInfo(userId: number) {
+    console.log(userId);
+    //throw new Error('Method not implemented.');
   }
 }
